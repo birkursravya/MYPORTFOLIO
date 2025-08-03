@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birkur Sravya | Portfolio</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(to right, #fff, #fed7ad);
+      overflow-x: hidden;
+    }
+    nav {
+      position: sticky;
+      top: 0;
+      background: linear-gradient(to right, #fff, #fed7ad);
+      z-index: 999;
+      height: 10vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .logo span {
+      font-size: 2rem;
+      font-weight: bold;
+      color: rgb(109,67,0);
+      text-shadow: 0 0 10px rgb(109,67,0);
+    }
+    .links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .links a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+      position: relative;
+    }
+    .links a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background: rgb(109,67,0);
+      transition: 0.3s;
+    }
+    .links a:hover::after {
+      width: 100%;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: black;
+    }
+    .contact-btn {
+      padding: 0.5rem 1.5rem;
+      border: 2px solid rgb(109,67,0);
+      border-radius: 25px;
+      background: linear-gradient(to right, #fff, #fed7ad);
+      color: rgb(109,67,0);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    section {
+      width: 100%;
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .card {
+      background: #fff;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      max-width: 1000px;
+      width: 100%;
+      margin: 40px auto;
+    }
+    .card h2 {
+      color: rgb(109,67,0);
+      margin-bottom: 20px;
+      font-size: 2rem;
+      text-align: center;
+    }
+    .skills-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+    .skill-card {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 600;
+      color: rgb(109,67,0);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .project-card {
+      margin-bottom: 20px;
+      padding: 20px;
+      background: #f5f5f5;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .project-card b {
+      color: rgb(109,67,0);
+      display: block;
+      margin-bottom: 8px;
+    }
+    .social-icons {
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    .social-icons a {
+      font-size: 1.8rem;
+      color: rgb(109,67,0);
+      border: 2px solid rgb(109,67,0);
+      border-radius: 50%;
+      padding: 0.5rem;
+      transition: 0.3s;
+    }
+    .social-icons a:hover {
+      background: rgb(109,67,0);
+      color: white;
+      transform: scale(1.1);
+    }
+    .download-btn {
+      display: block;
+      margin: 0 auto;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: rgb(109,67,0);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .download-btn:hover {
+      background: #8a4f00;
+    }
+    @media (max-width: 768px) {
+      .links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 10vh;
+        right: 0;
+        background: linear-gradient(to right, #fff, #fed7ad);
+        width: 200px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        padding: 1rem;
+      }
+      .menu-toggle {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo"><span>Sravya</span></div>
+    <div class="links" id="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact" class="contact-btn">Contact</a>
+    </div>
+    <div class="menu-toggle" onclick="toggleMenu()"><i class="fas fa-bars"></i></div>
+  </nav>
+
+  <section id="home">
+    <div class="main-container" style="display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;">
+      <div class="image" data-aos="zoom-in-right" data-aos-duration="2500">
+        <img src="mypic.jpg" alt="Birkur Sravya" style="width: 300px; height: 300px; border-radius: 50%; object-fit: cover; border: 5px solid rgb(109,67,0); box-shadow: 0 0 30px rgba(109,67,0,0.4);">
+      </div>
+      <div class="content" style="max-width: 500px">
+        <h1 data-aos="fade-left" data-aos-duration="1000" data-aos-delay="800" style="font-size: 50px;">
+  <span style="font-size: 35px;">Hey, I'm</span> 
+  <span style="color: rgb(109,67,0); text-shadow: 0 0 10px rgb(109,67,0); font-size: 45px;">
+    Birkur Sravya
+  </span>
+</h1>
+
+
+        <div class="typewriter" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="900" style="font-weight: 600; font-size: 1.5rem; margin: 10px 0; color: rgb(109,67,0); text-shadow: 0 0 5px rgb(109,67,0);">
+          AI & Data Science Student
+        </div>
+        <p data-aos="flip-up" data-aos-duration="1000" data-aos-delay="1000">
+          Enthusiastic and detail-oriented B.Tech student specializing in Artificial Intelligence & Data Science. Skilled in Python, Java, Machine Learning, and MySQL with hands-on projects like 
+          <strong>Hand Gesture Volume Control</strong> and <strong>ElysiumMind – Emotion Based Media & Self-Love AI</strong>.
+        </p>
+        <div class="social-icons" style="position: relative; left: -160px;">
+  <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+  <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+  <a href="mailto:birkursravya28@gmail.com"><i class="fas fa-envelope"></i></a>
+</div>
+
+        <a href="https://drive.google.com/file/d/1569jmzZdeubUyncKA2W_60RY_PhiLc2M/view?usp=drive_link" class="download-btn" download>Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="card" data-aos="fade-up">
+      <h2>About Me</h2>
+<p style="text-align: justify;">
+  I’m <b>Birkur Sravya</b>, a passionate and detail-oriented B.Tech student in Artificial Intelligence & Data Science. 
+  I specialize in Python, Java, Machine Learning, and MySQL, with hands-on experience in building AI-driven applications. 
+  Some of my key projects include <b>Hand Gesture Volume Control</b> and <b>ElysiumMind – an Emotion Based Media & Self-Love AI</b>. 
+  I enjoy exploring innovative solutions to real-world problems through AI and Data Science, 
+  and I aim to specialize in Machine Learning, developing models and solutions that drive innovation and real-world impact.
+</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="card" data-aos="fade-up">
+      <h2>Skills</h2>
+      <div class="skills-container">
+        <div class="skill-card">Python</div>
+        <div class="skill-card">Java</div>
+        <div class="skill-card">Machine Learning</div>
+        <div class="skill-card">MySQL</div>
+        
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="card" data-aos="fade-up">
+      <h2>Projects</h2>
+      <div class="project-card">
+        <b>Hand Gesture Based Volume Control</b>
+        <p>This project showcases a real-time gesture recognition system that controls system volume using Python, OpenCV, MediaPipe, and Pycaw. By tracking the distance between fingers, the system allows users to adjust audio levels without physical input devices, demonstrating practical applications of computer vision and AI in human-computer interaction.</p>
+      </div>
+      <div class="project-card">
+        <b>ElysiumMind – Emotion Based Media & Self-Love AI</b>
+        <p>ElysiumMind is an AI-powered mental wellness project designed to enhance emotional awareness and self-care. Using Machine Learning, NLP, and Speech Recognition, it detects a user’s emotions from text and voice inputs and recommends or plays emotion-specific media content. The system supports multilingual emotion recognition and demonstrates the practical applications of AI in mental health, emotion detection, and human-computer interaction.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="certifications">
+    <div class="card" data-aos="fade-up">
+      <h2>Certifications</h2>
+      <div class="certification-card">
+        <a href="https://drive.google.com/file/d/19WEGfI4S0YG3sAiUza7bXnXNFBEthjFf/view?usp=drive_link" target="_blank">Fundamentals of AI&ML- AWS</a>
+        
+      <div class="certification-card">
+        <a href="https://drive.google.com/file/d/1TYpV1zZ5QtefNETvTjdAU3kxdEXTbxjq/view?usp=drive_link" target="_blank">Database Management System - Infosys Springboard</a>
+      </div>
+      <div class="certification-card">
+        <a href="https://drive.google.com/file/d/1p0PFE5EA6pEKa0xacnrbBV5Eu8_m7DK7/view?usp=drive_link" target="_blank">Java - HackerRank</a>
+      </div>
+      <div class="certification-card">
+        <a href="https://drive.google.com/file/d/1kWhbtHUiYFIZDUsiiXdsbGpf_uCFRzO9/view?usp=drive_link" target="_blank">Programming Fundamentals using Python - Part 1 - Infosys Sprinboard </a>
+      </div>
+      <div class="certification-card">
+        <a href="https://drive.google.com/file/d/1nbYeRPiCdprQt7ZNGQ7e5TzAYp_8Z_LI/view?usp=drive_link" target="_blank">Programming Fundamentals using Python - Part 2 - Infosys Sprinboard </a>
+      </div>
+      <div class="certification-card">
+        <a href="https://drive.google.com/file/d/1gRZyJ2da4AtFm12wKpt0LTcDcAGb4fU1/view?usp=drive_link" target="_blank">Personality Development - Infosys Sprinboard </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="card" data-aos="fade-up">
+      <h2>Contact</h2>
+      <div class="contact-card">
+        <b>Email : </b><a href="mailto:birkursravya28@gmail.com">birkursravya28@gmail.com</a>
+
+          </div>
+    </div>
+  </section>
+
+
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      offset: 120,
+      duration: 1000,
+      once: true
+    });
+
+    function toggleMenu() {
+      const navLinks = document.getElementById('nav-links');
+      navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    }
+  </script>
+</body>
+</html>
